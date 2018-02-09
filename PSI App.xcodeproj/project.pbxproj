@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EAB4F6B8202E3327007F7DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6B7202E3327007F7DB2 /* AppDelegate.swift */; };
-		EAB4F6BA202E3327007F7DB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6B9202E3327007F7DB2 /* ViewController.swift */; };
+		EAB4F6BA202E3327007F7DB2 /* PSIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6B9202E3327007F7DB2 /* PSIMapViewController.swift */; };
 		EAB4F6BD202E3327007F7DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB4F6BB202E3327007F7DB2 /* Main.storyboard */; };
 		EAB4F6BF202E3327007F7DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB4F6BE202E3327007F7DB2 /* Assets.xcassets */; };
 		EAB4F6C2202E3327007F7DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB4F6C0202E3327007F7DB2 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		EAB4F6B4202E3327007F7DB2 /* PSI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PSI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB4F6B7202E3327007F7DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAB4F6B9202E3327007F7DB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAB4F6B9202E3327007F7DB2 /* PSIMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapViewController.swift; sourceTree = "<group>"; };
 		EAB4F6BC202E3327007F7DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAB4F6BE202E3327007F7DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAB4F6C1202E3327007F7DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +97,11 @@
 		EAB4F6B6202E3327007F7DB2 /* PSI App */ = {
 			isa = PBXGroup;
 			children = (
+				EAB4F6EA202E3A06007F7DB2 /* Helpers */,
+				EAB4F6E9202E39FD007F7DB2 /* Modules */,
+				EAB4F6E8202E347E007F7DB2 /* Models */,
+				EAB4F6E7202E33F1007F7DB2 /* Services */,
 				EAB4F6B7202E3327007F7DB2 /* AppDelegate.swift */,
-				EAB4F6B9202E3327007F7DB2 /* ViewController.swift */,
 				EAB4F6BB202E3327007F7DB2 /* Main.storyboard */,
 				EAB4F6BE202E3327007F7DB2 /* Assets.xcassets */,
 				EAB4F6C0202E3327007F7DB2 /* LaunchScreen.storyboard */,
@@ -123,6 +126,51 @@
 				EAB4F6D9202E3327007F7DB2 /* Info.plist */,
 			);
 			path = "PSI AppUITests";
+			sourceTree = "<group>";
+		};
+		EAB4F6E7202E33F1007F7DB2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EAB4F6E8202E347E007F7DB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EAB4F6E9202E39FD007F7DB2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EAB4F6EC202E3A81007F7DB2 /* PSIChart */,
+				EAB4F6EB202E3A64007F7DB2 /* PSIMap */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EAB4F6EA202E3A06007F7DB2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EAB4F6EB202E3A64007F7DB2 /* PSIMap */ = {
+			isa = PBXGroup;
+			children = (
+				EAB4F6B9202E3327007F7DB2 /* PSIMapViewController.swift */,
+			);
+			path = PSIMap;
+			sourceTree = "<group>";
+		};
+		EAB4F6EC202E3A81007F7DB2 /* PSIChart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PSIChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB4F6BA202E3327007F7DB2 /* ViewController.swift in Sources */,
+				EAB4F6BA202E3327007F7DB2 /* PSIMapViewController.swift in Sources */,
 				EAB4F6B8202E3327007F7DB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
