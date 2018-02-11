@@ -15,7 +15,6 @@ class PSIMapViewController: UIViewController {
     lazy var viewModel: PSIMapViewModel = {
         return PSIMapViewModel()
     }()
-    let arrPos = ["west", "national", "east", "central", "south", "north"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +61,7 @@ class PSIMapViewController: UIViewController {
     }
     
     func initMarker(){
-        for pos in self.arrPos{
+        for pos in viewModel.getPSIDataPosition(){
             let marker = viewModel.getPSIDataObject(loc: pos)
             marker.map = self.mapView
         }

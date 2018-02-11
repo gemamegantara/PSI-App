@@ -75,11 +75,20 @@ class PSIMapViewModel {
         self.setDataOnMapClosure?()
     }
     
+    func getPSIDataPosition() -> [String] {
+        var position = [String]()
+        for (key, _) in self.psiDict {
+            position.append(key)
+        }
+        
+        return position
+    }
+    
     func getPSIDataObject(loc: String) -> GMSMarker {
         let psiObj = self.psiDict[loc]!
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: psiObj.latitude, longitude: psiObj.longitude)
-        marker.title = "Readings"
+        marker.title = "\(psiObj.name) PSI readings:"
         var snippetText = "o3_sub_index: \(psiObj.o3SubIndex!)\n"
         snippetText += "pm10_twenty_four_hourly: \(psiObj.pm10TwentyFourHourly!)\n"
         snippetText += "pm10_sub_index: \(psiObj.pm10SubIndex!)\n"
@@ -101,6 +110,7 @@ class PSIMapViewModel {
     func getPSIInfoWindow(marker: GMSMarker) -> UIView {
         let infoView = UINib(nibName: "InfoWindow", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! InfoWindow
         
+        infoView.labelTitle.text = marker.title
         infoView.labelContent.text = marker.snippet
         
         return infoView

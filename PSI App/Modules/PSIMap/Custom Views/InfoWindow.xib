@@ -79,6 +79,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="labelContent" destination="xY1-es-HRO" id="ztJ-cg-BQj"/>
+                <outlet property="labelTitle" destination="2ua-lI-Pyo" id="xxJ-ey-M0W"/>
             </connections>
             <point key="canvasLocation" x="-141.5" y="-48"/>
         </view>

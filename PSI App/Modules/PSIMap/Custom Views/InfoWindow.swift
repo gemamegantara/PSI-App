@@ -10,6 +10,7 @@ import UIKit
 
 class InfoWindow: UIView {
 
+    @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelContent: UILabel!
     /*
     // Only override draw() if you perform custom drawing.
