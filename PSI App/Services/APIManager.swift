@@ -22,8 +22,11 @@ class APIManager {
     typealias GetPSICompletion = (_ result: GetPSIResult) -> Void
     
     
-    func getPSIData(completion: @escaping GetPSICompletion) {
-        Alamofire.request(Constants.BASE_URL+"environment/psi", method: HTTPMethod.get, parameters: nil, encoding: URLEncoding.default, headers: Helper.sharedInstance.getHeaders())
+    func getPSIData(param: String, value: String, completion: @escaping GetPSICompletion) {
+        let parameters: Parameters = [
+            param: value,
+            ]
+        Alamofire.request(Constants.BASE_URL+"environment/psi", method: HTTPMethod.get, parameters: parameters, encoding: URLEncoding.default, headers: Helper.sharedInstance.getHeaders())
             .validate()
             .responseJSON { response in
                 switch response.result {

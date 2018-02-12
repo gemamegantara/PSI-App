@@ -35,7 +35,8 @@ class PSIMapViewModel {
     
     func initData() {
         self.isLoading = true
-        apiManager.getPSIData(completion: { [weak self] result in
+        
+        apiManager.getPSIData(param: "date_time", value: self.getSGTDateTimeString(), completion: { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let psi):
@@ -44,6 +45,13 @@ class PSIMapViewModel {
                 self?.alertMessage = error?.localizedDescription
             }
         })
+    }
+    
+    private func getSGTDateTimeString() -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "SGT")!
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return formatter.string(from: Date())
     }
     
     private func processFetchedData( psi: PSI) {
@@ -57,19 +65,25 @@ class PSIMapViewModel {
         }
         
         for (key, value) in self.psiDict {
-            value.o3SubIndex = self.psi.items[0]["readings"]["o3_sub_index"][key].doubleValue
-            value.pm10TwentyFourHourly = self.psi.items[0]["readings"]["pm10_twenty_four_hourly"][key].doubleValue
-            value.pm10SubIndex = self.psi.items[0]["readings"]["pm10_sub_index"][key].doubleValue
-            value.coSubIndex = self.psi.items[0]["readings"]["co_sub_index"][key].doubleValue
-            value.pm25TwentyFourHourly = self.psi.items[0]["readings"]["pm25_twenty_four_hourly"][key].doubleValue
-            value.so2_sub_index = self.psi.items[0]["readings"]["so2_sub_index"][key].doubleValue
-            value.coEightHourMax = self.psi.items[0]["readings"]["co_eight_hour_max"][key].doubleValue
-            value.no2OneHourMax = self.psi.items[0]["readings"]["no2_one_hour_max"][key].doubleValue
-            value.so2TwentyFourHourly = self.psi.items[0]["readings"]["so2_twenty_four_hourly"][key].doubleValue
-            value.pm25SubIndex = self.psi.items[0]["readings"]["pm25_sub_index"][key].doubleValue
+            value.reading.removeAll()
             
-            value.psiTwentyFourHourly = self.psi.items[0]["readings"]["psi_twenty_four_hourly"][key].doubleValue
-            value.o3EightHourMax = self.psi.items[0]["readings"]["o3_eight_hour_max"][key].doubleValue
+            let psiReading = PSIReading()
+            psiReading.o3SubIndex = self.psi.items[0]["readings"]["o3_sub_index"][key].doubleValue
+            psiReading.pm10TwentyFourHourly = self.psi.items[0]["readings"]["pm10_twenty_four_hourly"][key].doubleValue
+            psiReading.pm10SubIndex = self.psi.items[0]["readings"]["pm10_sub_index"][key].doubleValue
+            psiReading.coSubIndex = self.psi.items[0]["readings"]["co_sub_index"][key].doubleValue
+            psiReading.pm25TwentyFourHourly = self.psi.items[0]["readings"]["pm25_twenty_four_hourly"][key].doubleValue
+            psiReading.so2_sub_index = self.psi.items[0]["readings"]["so2_sub_index"][key].doubleValue
+            psiReading.coEightHourMax = self.psi.items[0]["readings"]["co_eight_hour_max"][key].doubleValue
+            psiReading.no2OneHourMax = self.psi.items[0]["readings"]["no2_one_hour_max"][key].doubleValue
+            psiReading.so2TwentyFourHourly = self.psi.items[0]["readings"]["so2_twenty_four_hourly"][key].doubleValue
+            psiReading.pm25SubIndex = self.psi.items[0]["readings"]["pm25_sub_index"][key].doubleValue
+            
+            psiReading.psiTwentyFourHourly = self.psi.items[0]["readings"]["psi_twenty_four_hourly"][key].doubleValue
+            psiReading.o3EightHourMax = self.psi.items[0]["readings"]["o3_eight_hour_max"][key].doubleValue
+            psiReading.timestamp = self.psi.items[0]["timestamp"].rawString()
+            
+            value.reading.append(psiReading)
         }
         
         self.setDataOnMapClosure?()
@@ -89,18 +103,18 @@ class PSIMapViewModel {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: psiObj.latitude, longitude: psiObj.longitude)
         marker.title = "\(psiObj.name) PSI readings:"
-        var snippetText = "o3_sub_index: \(psiObj.o3SubIndex!)\n"
-        snippetText += "pm10_twenty_four_hourly: \(psiObj.pm10TwentyFourHourly!)\n"
-        snippetText += "pm10_sub_index: \(psiObj.pm10SubIndex!)\n"
-        snippetText += "co_sub_index: \(psiObj.coSubIndex!)\n"
-        snippetText += "pm25_twenty_four_hourly: \(psiObj.pm25TwentyFourHourly!)\n"
-        snippetText += "so2_sub_index: \(psiObj.so2_sub_index!)\n"
-        snippetText += "co_eight_hour_max: \(psiObj.coEightHourMax!)\n"
-        snippetText += "no2_one_hour_max: \(psiObj.no2OneHourMax!)\n"
-        snippetText += "so2_twenty_four_hourly: \(psiObj.so2TwentyFourHourly!)\n"
-        snippetText += "pm25_sub_index: \(psiObj.pm25SubIndex!)\n"
-        snippetText += "psi_twenty_four_hourly: \(psiObj.psiTwentyFourHourly!)\n"
-        snippetText += "o3_eight_hour_max: \(psiObj.o3EightHourMax!)\n"
+        var snippetText = "o3_sub_index: \(psiObj.reading[0].o3SubIndex!)\n"
+        snippetText += "pm10_twenty_four_hourly: \(psiObj.reading[0].pm10TwentyFourHourly!)\n"
+        snippetText += "pm10_sub_index: \(psiObj.reading[0].pm10SubIndex!)\n"
+        snippetText += "co_sub_index: \(psiObj.reading[0].coSubIndex!)\n"
+        snippetText += "pm25_twenty_four_hourly: \(psiObj.reading[0].pm25TwentyFourHourly!)\n"
+        snippetText += "so2_sub_index: \(psiObj.reading[0].so2_sub_index!)\n"
+        snippetText += "co_eight_hour_max: \(psiObj.reading[0].coEightHourMax!)\n"
+        snippetText += "no2_one_hour_max: \(psiObj.reading[0].no2OneHourMax!)\n"
+        snippetText += "so2_twenty_four_hourly: \(psiObj.reading[0].so2TwentyFourHourly!)\n"
+        snippetText += "pm25_sub_index: \(psiObj.reading[0].pm25SubIndex!)\n"
+        snippetText += "psi_twenty_four_hourly: \(psiObj.reading[0].psiTwentyFourHourly!)\n"
+        snippetText += "o3_eight_hour_max: \(psiObj.reading[0].o3EightHourMax!)\n"
         marker.snippet = snippetText
         marker.appearAnimation = GMSMarkerAnimation.pop
         

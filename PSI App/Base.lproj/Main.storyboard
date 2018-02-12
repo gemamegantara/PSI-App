@@ -17,15 +17,43 @@
                     <view key="view" contentMode="scaleToFill" id="Ir9-mr-Nxl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYM-tD-IdU" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="58" width="375" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eod-0b-gng">
+                                <rect key="frame" x="9" y="20" width="356" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ir2-7e-eoh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fYM-tD-IdU" firstAttribute="top" secondItem="V5M-C0-0kk" secondAttribute="top" constant="58" id="Ibn-Va-zvD"/>
+                            <constraint firstItem="fYM-tD-IdU" firstAttribute="leading" secondItem="V5M-C0-0kk" secondAttribute="leading" id="Mgy-KR-KqV"/>
+                            <constraint firstItem="eod-0b-gng" firstAttribute="top" secondItem="V5M-C0-0kk" secondAttribute="top" constant="20" id="ZjI-cM-LWf"/>
+                            <constraint firstItem="eod-0b-gng" firstAttribute="leading" secondItem="V5M-C0-0kk" secondAttribute="leading" constant="9" id="eCB-wz-eG0"/>
+                            <constraint firstItem="fYM-tD-IdU" firstAttribute="trailing" secondItem="V5M-C0-0kk" secondAttribute="trailing" id="iGf-y8-2kj"/>
+                            <constraint firstItem="V5M-C0-0kk" firstAttribute="trailing" secondItem="eod-0b-gng" secondAttribute="trailing" constant="10" id="j85-yE-AFT"/>
+                            <constraint firstItem="V5M-C0-0kk" firstAttribute="bottom" secondItem="fYM-tD-IdU" secondAttribute="bottom" constant="57" id="zt5-Uv-Srk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V5M-C0-0kk"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="PSI Chart" id="iVB-0f-rFZ"/>
+                    <connections>
+                        <outlet property="chart" destination="fYM-tD-IdU" id="7fA-0w-fxd"/>
+                        <outlet property="labelTitle" destination="eod-0b-gng" id="e1S-T5-ubk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZv-4q-ZuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="433"/>
+            <point key="canvasLocation" x="320.80000000000001" y="432.23388305847078"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zrT-M4-7Ge">

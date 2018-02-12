@@ -19,8 +19,8 @@ class PSIMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // Init the static view
+        
+        // Init map
         initView()
         
         // init view model

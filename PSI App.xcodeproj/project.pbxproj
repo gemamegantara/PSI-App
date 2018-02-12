@@ -28,6 +28,10 @@
 		EAB4F6F0202E3B61007F7DB2 /* PSIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6ED202E3B61007F7DB2 /* PSIData.swift */; };
 		EAC747AE2031F1A50055AB54 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747AD2031F1A50055AB54 /* MainTabViewController.swift */; };
 		EAC747B02031F28E0055AB54 /* PSIChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747AF2031F28E0055AB54 /* PSIChartViewController.swift */; };
+		EAC747B220320D050055AB54 /* PSIChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747B120320D050055AB54 /* PSIChartViewModel.swift */; };
+		EAC747B420320FA80055AB54 /* PSIReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747B320320FA80055AB54 /* PSIReading.swift */; };
+		EAC747B8203228BB0055AB54 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747B7203228BB0055AB54 /* BalloonMarker.swift */; };
+		EAC747BB20322C690055AB54 /* IntAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747BA20322C690055AB54 /* IntAxisValueFormatter.swift */; };
 		F7980B5360FC6A888FAE1417 /* Pods_PSI_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AAF68FCD2EDC14BA424A63 /* Pods_PSI_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +83,10 @@
 		EAB4F6ED202E3B61007F7DB2 /* PSIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIData.swift; sourceTree = "<group>"; };
 		EAC747AD2031F1A50055AB54 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		EAC747AF2031F28E0055AB54 /* PSIChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIChartViewController.swift; sourceTree = "<group>"; };
+		EAC747B120320D050055AB54 /* PSIChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIChartViewModel.swift; sourceTree = "<group>"; };
+		EAC747B320320FA80055AB54 /* PSIReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIReading.swift; sourceTree = "<group>"; };
+		EAC747B7203228BB0055AB54 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		EAC747BA20322C690055AB54 /* IntAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntAxisValueFormatter.swift; sourceTree = "<group>"; };
 		FD31A319E29D98112322F946 /* Pods-PSI AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSI AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSI AppUITests/Pods-PSI AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FEF444D58069C8B60BC1F4B5 /* Pods-PSI AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSI AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSI AppTests/Pods-PSI AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +220,7 @@
 			children = (
 				EAB4F6ED202E3B61007F7DB2 /* PSIData.swift */,
 				EA68EB1F202F8A21001FA13A /* PSI.swift */,
+				EAC747B320320FA80055AB54 /* PSIReading.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,7 +257,10 @@
 		EAB4F6EC202E3A81007F7DB2 /* PSIChart */ = {
 			isa = PBXGroup;
 			children = (
+				EAC747B920322C4F0055AB54 /* Formatters */,
+				EAC747B6203228A90055AB54 /* Custom Views */,
 				EAC747AF2031F28E0055AB54 /* PSIChartViewController.swift */,
+				EAC747B120320D050055AB54 /* PSIChartViewModel.swift */,
 			);
 			path = PSIChart;
 			sourceTree = "<group>";
@@ -259,6 +271,22 @@
 				EAC747AD2031F1A50055AB54 /* MainTabViewController.swift */,
 			);
 			path = "Main Tab";
+			sourceTree = "<group>";
+		};
+		EAC747B6203228A90055AB54 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAC747B7203228BB0055AB54 /* BalloonMarker.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		EAC747B920322C4F0055AB54 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				EAC747BA20322C690055AB54 /* IntAxisValueFormatter.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,11 +551,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PSI App/Pods-PSI App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,16 +591,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB4F6BA202E3327007F7DB2 /* PSIMapViewController.swift in Sources */,
+				EAC747B420320FA80055AB54 /* PSIReading.swift in Sources */,
 				EAB4F6EE202E3B61007F7DB2 /* PSIData.swift in Sources */,
+				EAC747BB20322C690055AB54 /* IntAxisValueFormatter.swift in Sources */,
 				EA68EB1E202F811A001FA13A /* Constant.swift in Sources */,
 				EA68EB1C202F7BD9001FA13A /* APIManager.swift in Sources */,
 				EA68EB22202F8B86001FA13A /* Result.swift in Sources */,
 				EAC747B02031F28E0055AB54 /* PSIChartViewController.swift in Sources */,
 				EAC747AE2031F1A50055AB54 /* MainTabViewController.swift in Sources */,
 				EA68EB272030C81D001FA13A /* InfoWindow.swift in Sources */,
+				EAC747B220320D050055AB54 /* PSIChartViewModel.swift in Sources */,
 				EA68EB20202F8A21001FA13A /* PSI.swift in Sources */,
 				EA68EB24202F8F27001FA13A /* PSIMapViewModel.swift in Sources */,
 				EAB4F6B8202E3327007F7DB2 /* AppDelegate.swift in Sources */,
+				EAC747B8203228BB0055AB54 /* BalloonMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

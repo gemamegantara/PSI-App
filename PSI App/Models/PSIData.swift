@@ -12,18 +12,7 @@ class PSIData: NSObject {
     var name: String
     var latitude: Double
     var longitude: Double
-    var o3SubIndex: Double!
-    var pm10TwentyFourHourly: Double!
-    var pm10SubIndex: Double!
-    var coSubIndex: Double!
-    var pm25TwentyFourHourly: Double!
-    var so2_sub_index: Double!
-    var coEightHourMax: Double!
-    var no2OneHourMax: Double!
-    var so2TwentyFourHourly: Double!
-    var pm25SubIndex: Double!
-    var psiTwentyFourHourly: Double!
-    var o3EightHourMax: Double!
+    var reading = [PSIReading]()
     
     init(name: String, latitude: Double, longitude: Double) {
         self.name = name

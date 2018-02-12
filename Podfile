@@ -9,6 +9,7 @@ target 'PSI App' do
   pod 'SwiftyJSON'
   pod 'Alamofire'  
   pod 'GoogleMaps'
+  pod 'Charts'
 
   target 'PSI AppTests' do
     inherit! :search_paths
