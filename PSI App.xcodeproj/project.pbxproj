@@ -26,6 +26,8 @@
 		EAB4F6EE202E3B61007F7DB2 /* PSIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6ED202E3B61007F7DB2 /* PSIData.swift */; };
 		EAB4F6EF202E3B61007F7DB2 /* PSIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6ED202E3B61007F7DB2 /* PSIData.swift */; };
 		EAB4F6F0202E3B61007F7DB2 /* PSIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6ED202E3B61007F7DB2 /* PSIData.swift */; };
+		EAC747AE2031F1A50055AB54 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747AD2031F1A50055AB54 /* MainTabViewController.swift */; };
+		EAC747B02031F28E0055AB54 /* PSIChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747AF2031F28E0055AB54 /* PSIChartViewController.swift */; };
 		F7980B5360FC6A888FAE1417 /* Pods_PSI_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AAF68FCD2EDC14BA424A63 /* Pods_PSI_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		EAB4F6D7202E3327007F7DB2 /* PSI_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSI_AppUITests.swift; sourceTree = "<group>"; };
 		EAB4F6D9202E3327007F7DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAB4F6ED202E3B61007F7DB2 /* PSIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIData.swift; sourceTree = "<group>"; };
+		EAC747AD2031F1A50055AB54 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		EAC747AF2031F28E0055AB54 /* PSIChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIChartViewController.swift; sourceTree = "<group>"; };
 		FD31A319E29D98112322F946 /* Pods-PSI AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSI AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSI AppUITests/Pods-PSI AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FEF444D58069C8B60BC1F4B5 /* Pods-PSI AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSI AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSI AppTests/Pods-PSI AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +219,7 @@
 		EAB4F6E9202E39FD007F7DB2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EAC747AC2031F17C0055AB54 /* Main Tab */,
 				EAB4F6EC202E3A81007F7DB2 /* PSIChart */,
 				EAB4F6EB202E3A64007F7DB2 /* PSIMap */,
 			);
@@ -243,8 +248,17 @@
 		EAB4F6EC202E3A81007F7DB2 /* PSIChart */ = {
 			isa = PBXGroup;
 			children = (
+				EAC747AF2031F28E0055AB54 /* PSIChartViewController.swift */,
 			);
 			path = PSIChart;
+			sourceTree = "<group>";
+		};
+		EAC747AC2031F17C0055AB54 /* Main Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EAC747AD2031F1A50055AB54 /* MainTabViewController.swift */,
+			);
+			path = "Main Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,6 +565,8 @@
 				EA68EB1E202F811A001FA13A /* Constant.swift in Sources */,
 				EA68EB1C202F7BD9001FA13A /* APIManager.swift in Sources */,
 				EA68EB22202F8B86001FA13A /* Result.swift in Sources */,
+				EAC747B02031F28E0055AB54 /* PSIChartViewController.swift in Sources */,
+				EAC747AE2031F1A50055AB54 /* MainTabViewController.swift in Sources */,
 				EA68EB272030C81D001FA13A /* InfoWindow.swift in Sources */,
 				EA68EB20202F8A21001FA13A /* PSI.swift in Sources */,
 				EA68EB24202F8F27001FA13A /* PSIMapViewModel.swift in Sources */,

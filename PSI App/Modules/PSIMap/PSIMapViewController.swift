@@ -15,7 +15,8 @@ class PSIMapViewController: UIViewController {
     lazy var viewModel: PSIMapViewModel = {
         return PSIMapViewModel()
     }()
-
+    @IBOutlet weak var btnRefresh: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
