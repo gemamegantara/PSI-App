@@ -35,6 +35,10 @@ class PSIChartViewModel {
     var updateLoadingStatus: (()->())?
     var setDataOnChartClosure: (()->())?
     
+    func refreshData(){
+        self.initData()
+    }
+    
     func initData() {
         self.isLoading = true
         

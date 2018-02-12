@@ -33,6 +33,10 @@ class PSIMapViewModel {
     var updateLoadingStatus: (()->())?
     var setDataOnMapClosure: (()->())?
     
+    func refreshData(){
+        self.initData()
+    }
+    
     func initData() {
         self.isLoading = true
         

@@ -45,7 +45,14 @@
                         <viewLayoutGuide key="safeArea" id="V5M-C0-0kk"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="PSI Chart" id="iVB-0f-rFZ"/>
+                    <navigationItem key="navigationItem" title="PSI Chart" id="iVB-0f-rFZ">
+                        <barButtonItem key="rightBarButtonItem" image="refresh_icon" id="Pf0-oa-kDs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="btnRefreshTapped:" destination="i7J-8Z-22B" id="Q7S-ex-TpK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chart" destination="fYM-tD-IdU" id="7fA-0w-fxd"/>
                         <outlet property="labelTitle" destination="eod-0b-gng" id="e1S-T5-ubk"/>
@@ -89,12 +96,12 @@
                     <navigationItem key="navigationItem" title="PSI Map" id="D7D-cN-BgT">
                         <barButtonItem key="rightBarButtonItem" image="refresh_icon" id="7Fk-1n-z2F">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="btnRefreshTapped:" destination="BYZ-38-t0r" id="e7m-76-STj"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="btnRefresh" destination="7Fk-1n-z2F" id="XDN-zl-Mrt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

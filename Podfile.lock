@@ -8,20 +8,23 @@ PODS:
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
+  - PKHUD (5.0.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Charts
   - GoogleMaps
+  - PKHUD (~> 5.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 599b06a3a8e2bc39a83b4679ea066c281c565720
+PODFILE CHECKSUM: 1606b1a3e9da302f6739b14c7da39e7a51378d45
 
 COCOAPODS: 1.3.1

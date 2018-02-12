@@ -10,6 +10,7 @@ target 'PSI App' do
   pod 'Alamofire'  
   pod 'GoogleMaps'
   pod 'Charts'
+  pod 'PKHUD', '~> 5.0'
 
   target 'PSI AppTests' do
     inherit! :search_paths

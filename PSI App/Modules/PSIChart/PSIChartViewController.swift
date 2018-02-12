@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import PKHUD
 
 class PSIChartViewController: UIViewController {
 
@@ -29,12 +30,12 @@ class PSIChartViewController: UIViewController {
     }
     
     func initView(){
-        chart.chartDescription?.enabled = false
-        chart.dragEnabled = true
-        chart.setScaleEnabled(true)
-        chart.pinchZoomEnabled = true
-        chart.legend.form = .line
-        chart.animate(xAxisDuration: 2.5)
+        self.chart.chartDescription?.enabled = false
+        self.chart.dragEnabled = true
+        self.chart.setScaleEnabled(true)
+        self.chart.pinchZoomEnabled = true
+        self.chart.legend.form = .line
+        self.chart.animate(xAxisDuration: 2.5)
         
         let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
                                    font: .systemFont(ofSize: 12),
@@ -42,7 +43,7 @@ class PSIChartViewController: UIViewController {
                                    insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
         marker.chartView = chart
         marker.minimumSize = CGSize(width: 80, height: 40)
-        chart.marker = marker
+        self.chart.marker = marker
         
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(abbreviation: "SGT")!
@@ -52,28 +53,57 @@ class PSIChartViewController: UIViewController {
     }
     
     func initVM(){
-        viewModel.setDataOnChartClosure = { [weak self] () in
+        self.viewModel.setDataOnChartClosure = { [weak self] () in
             DispatchQueue.main.async {
                 self?.setData()
             }
         }
         
-        viewModel.initData()
+        self.viewModel.showAlertClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    self?.showAlert( message )
+                }
+            }
+        }
+        
+        self.viewModel.updateLoadingStatus = { [weak self] () in
+            DispatchQueue.main.async {
+                if (self?.viewModel.isLoading)!{
+                    HUD.show(.progress)
+                }else{
+                    HUD.hide()
+                }
+            }
+        }
+        
+        self.viewModel.initData()
     }
     
     func setData(){
-        chart.data = viewModel.getDataSetsForChart()
+        let axisData = self.viewModel.getDataAxisForChart()
+        let xAxis = self.chart.xAxis
         
-        let axisData = viewModel.getDataAxisForChart()
-        
-        let xAxis = chart.xAxis
-
         xAxis.granularity = 1
         xAxis.centerAxisLabelsEnabled = false
         xAxis.drawLimitLinesBehindDataEnabled = false
         xAxis.valueFormatter = IntAxisValueFormatter(value: axisData)
+        
+        self.chart.data = self.viewModel.getDataSetsForChart()
+    }
+    
+    func showAlert( _ message: String ) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func btnRefreshTapped(_ sender: UIBarButtonItem) {
+        self.viewModel.refreshData()
+        self.chart.notifyDataSetChanged()
+        self.chart.resetZoom()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

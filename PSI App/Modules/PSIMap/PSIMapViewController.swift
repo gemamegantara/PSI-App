@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import PKHUD
 
 class PSIMapViewController: UIViewController {
     
@@ -15,7 +16,6 @@ class PSIMapViewController: UIViewController {
     lazy var viewModel: PSIMapViewModel = {
         return PSIMapViewModel()
     }()
-    @IBOutlet weak var btnRefresh: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class PSIMapViewController: UIViewController {
     func initVM() {
         
         // Naive binding
-        viewModel.showAlertClosure = { [weak self] () in
+        self.viewModel.showAlertClosure = { [weak self] () in
             DispatchQueue.main.async {
                 if let message = self?.viewModel.alertMessage {
                     self?.showAlert( message )
@@ -45,27 +45,36 @@ class PSIMapViewController: UIViewController {
             }
         }
         
-        viewModel.updateLoadingStatus = { [weak self] () in
+        self.viewModel.updateLoadingStatus = { [weak self] () in
             DispatchQueue.main.async {
-
+                if (self?.viewModel.isLoading)!{
+                    HUD.show(.progress)
+                }else{
+                    HUD.hide()
+                }
             }
         }
         
-        viewModel.setDataOnMapClosure = { [weak self] () in
+        self.viewModel.setDataOnMapClosure = { [weak self] () in
             DispatchQueue.main.async {
                 self?.initMarker()
             }
         }
         
-        viewModel.initData()
+        self.viewModel.initData()
         
     }
     
     func initMarker(){
-        for pos in viewModel.getPSIDataPosition(){
+        for pos in self.viewModel.getPSIDataPosition(){
             let marker = viewModel.getPSIDataObject(loc: pos)
             marker.map = self.mapView
         }
+    }
+    
+    @IBAction func btnRefreshTapped(_ sender: UIBarButtonItem) {
+        self.mapView.clear()
+        self.viewModel.refreshData()
     }
     
     func showAlert( _ message: String ) {
@@ -83,7 +92,7 @@ class PSIMapViewController: UIViewController {
 // MARK: - GMSMapViewDelegates
 extension PSIMapViewController : GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        return viewModel.getPSIInfoWindow(marker: marker)
+        return self.viewModel.getPSIInfoWindow(marker: marker)
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
