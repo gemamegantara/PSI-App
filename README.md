@@ -1,10 +1,10 @@
 ## Synopsis
 
-Demo app to show the implementation Pollutant Standards Index (PSI) as seen on https://data.gov.sg/dataset/psi in an iOS application. This app using Swift and several third party Library such as : Alamofire, SwiftyJSON, GoogleMaps, Charts, PKHUD.
+Demo app to show the implementation Pollutant Standards Index (PSI) as seen on https://data.gov.sg/dataset/psi in an iOS application. This app using Swift 4.0 and several third party Library such as : Alamofire, SwiftyJSON, GoogleMaps, Charts, PKHUD.
 
 ## Installation
 
-No need to run pod install because all the pods already there.
+You can run the project directly. No need to run pod install because all the pods already there.
 
 ## API Reference
 
