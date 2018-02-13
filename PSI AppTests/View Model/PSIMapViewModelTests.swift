@@ -56,7 +56,7 @@ class PSIMapViewModelTests: XCTestCase {
             XCTFail((self?.psiMapViewModelTest.alertMessage)!)
         }
         
-        self.psiMapViewModelTest.setDataOnMapClosure = { [weak self] () in
+        self.psiMapViewModelTest.setDataOnMapClosure = { () in
             expect.fulfill()
         }
         

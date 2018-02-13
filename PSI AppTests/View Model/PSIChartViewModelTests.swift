@@ -48,7 +48,7 @@ class PSIChartViewModelTests: XCTestCase {
             XCTFail((self?.psiChartViewModelTest.alertMessage)!)
         }
         
-        self.psiChartViewModelTest.setDataOnChartClosure = { [weak self] () in
+        self.psiChartViewModelTest.setDataOnChartClosure = { () in
             expect.fulfill()
         }
         

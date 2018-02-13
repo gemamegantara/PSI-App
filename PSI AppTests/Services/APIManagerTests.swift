@@ -26,7 +26,7 @@ class APIManagerTests: XCTestCase {
         
         let expect = XCTestExpectation(description: "callback")
         
-        api?.getPSIData(param: "date", value: "2018-02-12", completion: { [weak self] result in
+        api?.getPSIData(param: "date", value: "2018-02-12", completion: { result in
             switch result {
             case .success(let psi):
                 expect.fulfill()
