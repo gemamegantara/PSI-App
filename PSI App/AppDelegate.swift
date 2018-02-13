@@ -16,15 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //setting API key for google map
         GMSServices.provideAPIKey(Constants.GOOGLE_MAP_KEY)
         
+        //setting appearance for nav bar
         UINavigationBar.appearance().barTintColor = UIColor(red: 17.0/255.0, green: 51.0/255.0, blue: 85.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         UINavigationBar.appearance().barStyle = UIBarStyle.black
         
-        
+        //setting appearance for tab bar
         UITabBar.appearance().barTintColor = UIColor(red: 17.0/255.0, green: 51.0/255.0, blue: 85.0/255.0, alpha: 1.0)
         UITabBar.appearance().tintColor = UIColor.white
         

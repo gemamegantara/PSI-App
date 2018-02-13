@@ -27,4 +27,8 @@ class Helper: NSObject {
         
         return headers
     }
+    
+    func getColorScheme() -> [UIColor] {
+        return [.red, .brown, .orange, .green, .blue, .purple, .magenta, .cyan]
+    }
 }

@@ -9,21 +9,12 @@
 import Foundation
 import SwiftyJSON
 
-struct PSI {
-    let regionMetadata: [JSON]
-    let items: [JSON]
-}
-
-/// Mark: - extension Friend
-/// Put init functions inside extension so default constructor
-/// for the struct is created
-extension PSI {
-    init?(json: JSON) {
-        guard let regionMetadata = json["region_metadata"].array,
-            let items = json["items"].array else {
-                return nil
-        }
-        self.regionMetadata = regionMetadata
-        self.items = items
+class PSI: NSObject {
+    var regionMetadata: [JSON]!
+    var items: [JSON]!
+    
+    init(json: JSON) {
+        self.regionMetadata = json["region_metadata"].array
+        self.items = json["items"].array
     }
 }

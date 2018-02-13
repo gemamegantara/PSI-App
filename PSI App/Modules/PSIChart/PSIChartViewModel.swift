@@ -17,7 +17,7 @@ class PSIChartViewModel {
     
     private var psi: PSI!
     private var psiDict = [String: PSIData]()
-    private var arrColor:[UIColor] = [.red, .brown, .orange, .green, .blue, .purple, .magenta, .cyan]
+    private var arrColor:[UIColor] = Helper.sharedInstance.getColorScheme()
     
     var isLoading: Bool = false {
         didSet {
@@ -147,15 +147,5 @@ class PSIChartViewModel {
         
         return LineChartData(dataSets: arrayDataSet)
     }
-    
-    func getPSIDataPosition() -> [String] {
-        var position = [String]()
-        for (key, _) in self.psiDict {
-            position.append(key)
-        }
-        
-        return position
-    }
-    
 }
 

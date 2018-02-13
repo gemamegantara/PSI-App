@@ -93,6 +93,7 @@ class PSIMapViewModel {
         self.setDataOnMapClosure?()
     }
     
+    //getting key of the direction
     func getPSIDataPosition() -> [String] {
         var position = [String]()
         for (key, _) in self.psiDict {
@@ -102,6 +103,7 @@ class PSIMapViewModel {
         return position
     }
     
+    //create marker
     func getPSIDataObject(loc: String) -> GMSMarker {
         let psiObj = self.psiDict[loc]!
         let marker = GMSMarker()
@@ -125,8 +127,11 @@ class PSIMapViewModel {
         return marker
     }
     
+    //create custom info window
     func getPSIInfoWindow(marker: GMSMarker) -> UIView {
-        let infoView = UINib(nibName: "InfoWindow", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! InfoWindow
+        guard let infoView = UINib(nibName: "InfoWindow", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? InfoWindow else{
+            return UIView()
+        }
         
         infoView.labelTitle.text = marker.title
         infoView.labelContent.text = marker.snippet

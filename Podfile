@@ -17,9 +17,4 @@ target 'PSI App' do
     # Pods for testing
   end
 
-  target 'PSI AppUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

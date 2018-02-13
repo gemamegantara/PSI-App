@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class APIManager {
     
-    // MARK: - GetFriends
     enum APIFailureReason: Int, Error {
         case unAuthorized = 401
         case notFound = 404
@@ -32,7 +31,7 @@ class APIManager {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    completion(Result.success(payload: PSI(json: json)!))
+                    completion(Result.success(payload: PSI(json: json)))
                 case .failure(_):
                     if let statusCode = response.response?.statusCode,
                         let reason = APIFailureReason(rawValue: statusCode) {
