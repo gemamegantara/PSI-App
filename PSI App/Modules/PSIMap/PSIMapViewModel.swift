@@ -129,9 +129,7 @@ class PSIMapViewModel {
     
     //create custom info window
     func getPSIInfoWindow(marker: GMSMarker) -> UIView {
-        guard let infoView = UINib(nibName: "InfoWindow", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? InfoWindow else{
-            return UIView()
-        }
+        let infoView = UINib(nibName: "InfoWindow", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! InfoWindow
         
         infoView.labelTitle.text = marker.title
         infoView.labelContent.text = marker.snippet

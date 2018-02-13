@@ -39,7 +39,7 @@ class PSIMapViewModelTests: XCTestCase {
         
         self.psiMapViewModelTest.initData()
         
-        wait(for: [expect], timeout: 5.0)
+        wait(for: [expect], timeout: 30.0)
     }
     
     func testGetLoc(){
@@ -62,7 +62,7 @@ class PSIMapViewModelTests: XCTestCase {
         
         self.psiMapViewModelTest.refreshData()
         
-        wait(for: [expect], timeout: 5.0)
+        wait(for: [expect], timeout: 30.0)
     }
     
     override func tearDown() {

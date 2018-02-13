@@ -4,7 +4,7 @@ Demo app to show the implementation Pollutant Standards Index (PSI) as seen on h
 
 ## Installation
 
-You can run the project directly. No need to run pod install because all the pods already there.
+Open the project by double click the `PSI App.xcworkspace`. You can run the project directly. No need to run pod install because all the pods already there.
 
 ## API Reference
 

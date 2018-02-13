@@ -38,7 +38,7 @@ class PSIChartViewModelTests: XCTestCase {
         }
         self.psiChartViewModelTest.initData()
         
-        wait(for: [expect], timeout: 5.0)
+        wait(for: [expect], timeout: 30.0)
     }
     
     func testRefresh(){
@@ -54,7 +54,7 @@ class PSIChartViewModelTests: XCTestCase {
         
         self.psiChartViewModelTest.refreshData()
         
-        wait(for: [expect], timeout: 5.0)
+        wait(for: [expect], timeout: 30.0)
     }
     
     override func tearDown() {

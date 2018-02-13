@@ -15,6 +15,7 @@
 		EA68EB24202F8F27001FA13A /* PSIMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA68EB23202F8F27001FA13A /* PSIMapViewModel.swift */; };
 		EA68EB272030C81D001FA13A /* InfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA68EB262030C81D001FA13A /* InfoWindow.swift */; };
 		EA68EB292030C82E001FA13A /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA68EB282030C82E001FA13A /* InfoWindow.xib */; };
+		EA8DC2C820331AF100BAE4D9 /* PSIMapViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DC2C720331AF100BAE4D9 /* PSIMapViewControllerSpec.swift */; };
 		EAB4F6B8202E3327007F7DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6B7202E3327007F7DB2 /* AppDelegate.swift */; };
 		EAB4F6BA202E3327007F7DB2 /* PSIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6B9202E3327007F7DB2 /* PSIMapViewController.swift */; };
 		EAB4F6BD202E3327007F7DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB4F6BB202E3327007F7DB2 /* Main.storyboard */; };
@@ -35,12 +36,8 @@
 		EAC747CD20324B7A0055AB54 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747AD2031F1A50055AB54 /* MainTabViewController.swift */; };
 		EAC747CF20324B870055AB54 /* IntAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747BA20322C690055AB54 /* IntAxisValueFormatter.swift */; };
 		EAC747D120324B9E0055AB54 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747B7203228BB0055AB54 /* BalloonMarker.swift */; };
-		EAC747D220324B9E0055AB54 /* PSIChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747AF2031F28E0055AB54 /* PSIChartViewController.swift */; };
-		EAC747D320324B9E0055AB54 /* PSIChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747B120320D050055AB54 /* PSIChartViewModel.swift */; };
 		EAC747D420324B9E0055AB54 /* InfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA68EB262030C81D001FA13A /* InfoWindow.swift */; };
 		EAC747D520324B9E0055AB54 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA68EB282030C82E001FA13A /* InfoWindow.xib */; };
-		EAC747D620324B9E0055AB54 /* PSIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB4F6B9202E3327007F7DB2 /* PSIMapViewController.swift */; };
-		EAC747D720324B9E0055AB54 /* PSIMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA68EB23202F8F27001FA13A /* PSIMapViewModel.swift */; };
 		EAC747DF20324BA50055AB54 /* PSI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA68EB1F202F8A21001FA13A /* PSI.swift */; };
 		EAC747E120324BA90055AB54 /* PSIReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747B320320FA80055AB54 /* PSIReading.swift */; };
 		EAC747E320324BB30055AB54 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA68EB1B202F7BD9001FA13A /* APIManager.swift */; };
@@ -48,6 +45,7 @@
 		EAC747E920324C5F0055AB54 /* PSITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747E820324C5F0055AB54 /* PSITests.swift */; };
 		EAC747EC2032549D0055AB54 /* PSIDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747EB2032549D0055AB54 /* PSIDataTests.swift */; };
 		EAC747EE203254B20055AB54 /* PSIReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC747ED203254B20055AB54 /* PSIReadingTests.swift */; };
+		EAE3203720331F98007E8760 /* PSIChartViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE3203620331F98007E8760 /* PSIChartViewControllerSpec.swift */; };
 		EAF4ACDB2032E73E0063032D /* PSIMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4ACDA2032E73E0063032D /* PSIMapViewModelTests.swift */; };
 		EAF4ACDD2032F5EA0063032D /* PSIChartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4ACDC2032F5EA0063032D /* PSIChartViewModelTests.swift */; };
 		F7980B5360FC6A888FAE1417 /* Pods_PSI_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AAF68FCD2EDC14BA424A63 /* Pods_PSI_App.framework */; };
@@ -78,6 +76,7 @@
 		EA68EB23202F8F27001FA13A /* PSIMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapViewModel.swift; sourceTree = "<group>"; };
 		EA68EB262030C81D001FA13A /* InfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWindow.swift; sourceTree = "<group>"; };
 		EA68EB282030C82E001FA13A /* InfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
+		EA8DC2C720331AF100BAE4D9 /* PSIMapViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapViewControllerSpec.swift; sourceTree = "<group>"; };
 		EAB4F6B4202E3327007F7DB2 /* PSI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PSI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB4F6B7202E3327007F7DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB4F6B9202E3327007F7DB2 /* PSIMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		EAC747E820324C5F0055AB54 /* PSITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSITests.swift; sourceTree = "<group>"; };
 		EAC747EB2032549D0055AB54 /* PSIDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIDataTests.swift; sourceTree = "<group>"; };
 		EAC747ED203254B20055AB54 /* PSIReadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIReadingTests.swift; sourceTree = "<group>"; };
+		EAE3203620331F98007E8760 /* PSIChartViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIChartViewControllerSpec.swift; sourceTree = "<group>"; };
 		EAF4ACDA2032E73E0063032D /* PSIMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIMapViewModelTests.swift; sourceTree = "<group>"; };
 		EAF4ACDC2032F5EA0063032D /* PSIChartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIChartViewModelTests.swift; sourceTree = "<group>"; };
 		FD31A319E29D98112322F946 /* Pods-PSI AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSI AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSI AppUITests/Pods-PSI AppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 		EAB4F6CB202E3327007F7DB2 /* PSI AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				EAE3203520331F7C007E8760 /* View Controller */,
 				EAF4ACD92032E6F30063032D /* View Model */,
 				EAC747EA203254140055AB54 /* Services */,
 				EAC747E720324C450055AB54 /* Models */,
@@ -311,6 +312,15 @@
 				EAC747C7203248A50055AB54 /* APIManagerTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		EAE3203520331F7C007E8760 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DC2C720331AF100BAE4D9 /* PSIMapViewControllerSpec.swift */,
+				EAE3203620331F98007E8760 /* PSIChartViewControllerSpec.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		EAF4ACD92032E6F30063032D /* View Model */ = {
@@ -572,27 +582,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAC747E320324BB30055AB54 /* APIManager.swift in Sources */,
+				EA8DC2C820331AF100BAE4D9 /* PSIMapViewControllerSpec.swift in Sources */,
 				EAC747CF20324B870055AB54 /* IntAxisValueFormatter.swift in Sources */,
 				EAF4ACDD2032F5EA0063032D /* PSIChartViewModelTests.swift in Sources */,
 				EAC747D420324B9E0055AB54 /* InfoWindow.swift in Sources */,
 				EAC747E120324BA90055AB54 /* PSIReading.swift in Sources */,
+				EAE3203720331F98007E8760 /* PSIChartViewControllerSpec.swift in Sources */,
 				EAC747DF20324BA50055AB54 /* PSI.swift in Sources */,
 				EAB4F6EF202E3B61007F7DB2 /* PSIData.swift in Sources */,
-				EAC747D320324B9E0055AB54 /* PSIChartViewModel.swift in Sources */,
 				EAC747CB20324B740055AB54 /* Result.swift in Sources */,
 				EAC747E920324C5F0055AB54 /* PSITests.swift in Sources */,
 				EAF4ACDB2032E73E0063032D /* PSIMapViewModelTests.swift in Sources */,
-				EAC747D220324B9E0055AB54 /* PSIChartViewController.swift in Sources */,
 				EAB4F6CD202E3327007F7DB2 /* PSI_AppTests.swift in Sources */,
 				EAC747C8203248A50055AB54 /* APIManagerTests.swift in Sources */,
 				EAC747C920324B6A0055AB54 /* Constant.swift in Sources */,
 				EAC747EE203254B20055AB54 /* PSIReadingTests.swift in Sources */,
 				EAC747CD20324B7A0055AB54 /* MainTabViewController.swift in Sources */,
-				EAC747D620324B9E0055AB54 /* PSIMapViewController.swift in Sources */,
 				EAC747EC2032549D0055AB54 /* PSIDataTests.swift in Sources */,
 				EAC747D120324B9E0055AB54 /* BalloonMarker.swift in Sources */,
 				EAC747E520324BB60055AB54 /* AppDelegate.swift in Sources */,
-				EAC747D720324B9E0055AB54 /* PSIMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

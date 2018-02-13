@@ -13,7 +13,7 @@
         <!--PSI Chart-->
         <scene sceneID="q04-3F-gxa">
             <objects>
-                <viewController id="i7J-8Z-22B" customClass="PSIChartViewController" customModule="PSI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PSIChartViewController" id="i7J-8Z-22B" customClass="PSIChartViewController" customModule="PSI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ir9-mr-Nxl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
         <!--PSI Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PSIMapViewController" customModule="PSI_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PSIMapViewController" id="BYZ-38-t0r" customClass="PSIMapViewController" customModule="PSI_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
